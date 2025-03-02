@@ -1,0 +1,13 @@
+{
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "makefile.configureOnOpen": false,
+    "editor.formatOnSave": true,
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.formatDocument": "explicit"
+      }
+    },
+  }
