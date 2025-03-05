@@ -1,6 +1,6 @@
 .venv: uv.lock
 	uv sync
-	touch .venv
+	touch -c .venv
 
 init: .venv
 
