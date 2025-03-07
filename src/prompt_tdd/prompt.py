@@ -5,7 +5,7 @@ import pytest
 from prompt_tdd.client import execute
 
 
-def example_one(content):
+def example_one(content, model=None):
     messages = [
         {
             "role": "system",
@@ -21,7 +21,7 @@ def example_one(content):
     ]
 
     # This prompt should return JSON
-    response = execute(messages)
+    response = execute(messages, model=model)
     try:
         return json.loads(response)
     except json.JSONDecodeError:

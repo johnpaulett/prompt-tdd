@@ -1,4 +1,5 @@
 import os
+from typing import Optional
 
 from openai import OpenAI
 from openai.types.chat import ChatCompletion, ChatCompletionMessageParam
@@ -13,10 +14,12 @@ def get_client():
     )
 
 
-def execute(messages: list[ChatCompletionMessageParam]) -> ChatCompletion:
+def execute(
+    messages: list[ChatCompletionMessageParam], model: Optional[str] = None
+) -> ChatCompletion:
     client = get_client()
 
-    model = os.getenv("PROMPT_MODEL", "mistral-small")
+    model = model if model is not None else os.getenv("PROMPT_MODEL", "mistral-small")
 
     response = client.chat.completions.create(
         model=model,
